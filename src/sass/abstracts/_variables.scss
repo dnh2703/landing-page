@@ -1,0 +1,197 @@
+$base-spacing: 0.25rem;
+$total-steps: 100;
+
+$properties: (
+  px: (
+    padding-left,
+    padding-right
+  ),
+  py: (
+    padding-top,
+    padding-bottom
+  ),
+  pt: (
+    padding-top
+  ),
+  pb: (
+    padding-bottom
+  ),
+  pl: (
+    padding-left
+  ),
+  p: (
+    padding
+  ),
+  mx: (
+    margin-left,
+    margin-right
+  ),
+  my: (
+    margin-top,
+    margin-bottom
+  ),
+  mr: (
+    margin-right
+  ),
+  ml: (
+    margin-left
+  ),
+  mt: (
+    margin-top
+  ),
+  mb: (
+    margin-bottom
+  ),
+  m: (
+    margin
+  )
+);
+
+@mixin generate-spacing-classes($property, $values) {
+  @for $i from 0 through $total-steps {
+    $value: $i * $base-spacing;
+    .#{$property}-#{$i} {
+      @each $val in $values {
+        #{$val}: #{$value};
+      }
+    }
+  }
+}
+
+// Loop through properties and generate classes
+@each $property, $values in $properties {
+  @include generate-spacing-classes(#{$property}, $values);
+}
+
+// Flexbox Utilities
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.flex-no-wrap {
+  flex-wrap: nowrap;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+.self-auto {
+  align-self: auto;
+}
+
+.self-start {
+  align-self: flex-start;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.self-baseline {
+  align-self: baseline;
+}
+
+.self-stretch {
+  align-self: stretch;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.order-first {
+  order: -1;
+}
+
+.order-last {
+  order: 9999;
+}
+
+.order-none {
+  order: 0;
+}
+
+.flex-initial {
+  flex: 0 1 auto;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.flex-none {
+  flex: none;
+}
