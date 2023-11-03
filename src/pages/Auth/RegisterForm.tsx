@@ -22,7 +22,7 @@ const RegisterForm = () => {
 
     setTimeout(() => {
       setIsLoading(false);
-      navigate('/');
+      navigate('/auth/login');
     }, 3000);
   };
 
