@@ -1,2 +1,119 @@
 @use "../abstracts" as *;
 
+@mixin h1 {
+  font-family: Roboto;
+  font-size: 4.5rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 4.95rem;
+}
+
+@mixin h2 {
+  /* Heading/4 */
+  font-family: Roboto;
+  font-size: 3.5rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 110%; /* 3.85rem */
+}
+
+@mixin h4 {
+  font-family: Roboto;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%; /* 2.75rem */
+}
+
+@mixin h5 {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.2rem;
+}
+
+h1,
+h2 {
+  @include h4;
+}
+
+h5 {
+  @include h5;
+}
+
+@media screen and (min-width: $lg) {
+  h1 {
+    @include h1;
+  }
+  h2 {
+    @include h2;
+  }
+}
+
+.text-l {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 1.8rem */
+}
+.text-m {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 150% */
+  letter-spacing: 0.03125rem;
+}
+
+.text-sm {
+  font-size: 0.8rem;
+}
+
+.text-xs {
+  font-size: 0.6rem;
+}
+
+.text-xl {
+  font-size: 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+// Font Weight Utilities
+.font-thin {
+  font-weight: 100;
+}
+
+.font-extralight {
+  font-weight: 200;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
+.font-black {
+  font-weight: 900;
+}
